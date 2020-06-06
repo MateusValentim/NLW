@@ -4,9 +4,9 @@ const server = express();
 // config public folder
 server.use(express.static("public"))
 
-// Utilizando template engine
+// Utilizando template engine - ligando o nunjucks no express
 const nunjucks = require("nunjucks")
-nunjucks.configure("/src/views", {
+nunjucks.configure("src/views", {
     express: server,
     noCache: true
 })
@@ -15,12 +15,17 @@ nunjucks.configure("/src/views", {
 
 //home
 server.get("/", (req,res) => {
-    res.sendFile(__dirname + "/views/index.html")
+  return res.render("index.html", { title: "Um titulo" })
 })
 
 server.get("/create-point", (req,res) => {
-    res.sendFile(__dirname + "/views/create-point.html")
+    return res.render("create-point.html")
 })
+
+server.get("/search", (req,res) => {
+  return res.render("search-results.html")
+})
+
 
 
 //on server
