@@ -1,15 +1,19 @@
-body::after { /*pseudo Elemento */
-    content: "";
-    position: fixed;
-    background: white;
-    top: 200px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1; /* x e y = largura e altura e o Z é a profundidade */
+body {
+    background-color: white;
 }
 
 
+body::after { /*pseudo Elemento */
+    content: "";
+    position: absolute;
+    background: #f0f0f5;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 16rem;
+    z-index: -1; /* x e y = largura e altura e o Z é a profundidade */
+}
 
 #page-search-results {
     width: 90%;

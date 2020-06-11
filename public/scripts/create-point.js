@@ -55,7 +55,8 @@ document
 const itemsToCollect = document.querySelectorAll(".items-grid li")
 
 for (const item of itemsToCollect){
-    item.addEventListener("click", handleSelectedItem)
+    item.addEventListener("click", handleSelectedItem) //adicionando uma callbackFunction para ser executada apenas quando o click for executado
+
 }
 
 const collectedItems = document.querySelector("input [name=items]")
@@ -69,7 +70,10 @@ function handleSelectedItem(event){
     //itemLi.classList.remove("selected")
     
     itemLi.classList.toggle("selected") // Toggle adiciona ou remove a classe 
+    
     const itemId = event.target.dataset.id
+
+    console.log("ITEM ID:", itemId)
 
     // verificar se existem itens selecionados, se sim
     // pegar os itens selecionados
